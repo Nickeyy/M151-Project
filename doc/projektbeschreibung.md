@@ -11,7 +11,7 @@ Filialleiter (Admin)   | Kann neue Schuhe hinzufügen und entfernen   |
 Mitarbeiter   | Kann Schuhe abfragen und updaten   |
 Käufer (User)   | Kann alle Schuhe ansehen und kaufen    |
 
-## Wie soll die Applikation von den User genutzt werden? (Use Case)
+## Wie soll die Applikation von den User genutzt werden? (User-Story)
  ID | Beschreibung |
 -------- | -------- |
 01   | Als Filialleiter möchte ich neue Schuhe dem Sortiment hinzufügen, um das Sortiment des Ladens zu vergrössern.   | 
