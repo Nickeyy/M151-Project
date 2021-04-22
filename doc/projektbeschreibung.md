@@ -7,9 +7,9 @@ Schuhe upzudaten und die neusten Schuhen vom Markt hinzuzufügen.
 ## Wer sind meine Personengruppen?
 Person | Kurzbeschreibung |
 -------- | -------- |
-![Men1](../res/logan.jpg) Logan | Logan(30) ist der Filialleiter des Schuhladens seit 2 Jahren, er kann neue Schuhe hinzufügen und entfernen.  | 
-![Women1](../res/nojan.jpg) Nojan   | Nojan(20) ist neu im Team und hat als Verkäuferin angefangen, sie kann Schuhe abfragen und updaten.   |
-![Men1](../res/christopher.jpg) Christopher  | Christopher(21) ist Sneaker süchtig und ist faste jede Woche im Laden um neue Schuhe zu kaufen, er kann alle Schuhe ansehen und kaufen    |
+![Men1](../res/logan.jpg) Logan | Logan(30) ist der Filialleiter des Schuhladens seit 2 Jahren, seine Aufgabe ist neue Schuhe hinzu zufügen und wieder entfernen wenn es ein älteres Model ist.  | 
+![Women1](../res/nojan.jpg) Nojan   | Nojan(20) ist neu im Team und hat als Verkäuferin angefangen, sie kann Schuhe abfragen um Kunden zu zeigen wieviel noch an lager sind, in welchen Grössen und kann sie Updaten.   |
+![Men1](../res/christopher.jpg) Christopher  | Christopher(21) ist Sneaker süchtig und ist faste jede Woche im Laden um neue Schuhe zu kaufen, er kann alle Schuhe ansehen und kaufen.    |
 
 ## Wie soll die Applikation von den User genutzt werden? (User-Story)
  ID | Beschreibung |
