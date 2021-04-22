@@ -9,7 +9,7 @@ Person | Kurzbeschreibung |
 -------- | -------- |
 ![Men1](../res/logan.jpg) Logan | Logan(30) ist der Filialleiter des Schuhladens seit 2 Jahren, er kann neue Schuhe hinzufügen und entfernen.  | 
 ![Women1](../res/nojan.jpg) Nojan   | Nojan(20) ist neu im Team und hat als Verkäuferin angefangen, sie kann Schuhe abfragen und updaten.   |
-![Men1](../res/christopher.jpg) Christopher  | Christopher(21) ist Sneaker süchtig und ist faste jede Woche im Laden, er kann alle Schuhe ansehen und kaufen    |
+![Men1](../res/christopher.jpg) Christopher  | Christopher(21) ist Sneaker süchtig und ist faste jede Woche im Laden um neue Schuhe zu kaufen, er kann alle Schuhe ansehen und kaufen    |
 
 ## Wie soll die Applikation von den User genutzt werden? (User-Story)
  ID | Beschreibung |
@@ -24,4 +24,4 @@ Person | Kurzbeschreibung |
 08   | Als Christopher möchte ich mir einen Schuh kaufen können, um diesen dann später anziehen zu können. | 
 
 ## Welche Technologien werden eingesetzt?
-Meine Auswahl für die Programmiersprache ist auf Java gefallen, da wir im Geschäft auch Java einsetzten, ich aber noch nicht dazu gekommen bin dies zu verwenden. Darum dachte ich das es eine gute Übung wäre es mit Java zu machen. Als Framwork um die Verbindung der Datenbank zu gewährleisten werde ich Spring verwenden. Für das Chaching-System werde ich Redis benutzen.
+Meine Auswahl für die Programmiersprache ist auf Java gefallen, da wir im Geschäft auch Java einsetzten, ich aber noch nicht dazu gekommen bin dies zu verwenden. Darum dachte ich das es eine gute Übung wäre es mit Java zu machen. Für die Datenbank habe ich mich für Postgres entschieden mit Docker. Als Framwork um die Verbindung der Datenbank zu gewährleisten werde ich Spring verwenden. Für das Chaching-System werde ich Redis benutzen.
