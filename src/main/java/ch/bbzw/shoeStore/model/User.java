@@ -45,6 +45,9 @@ public class User{
         this.userGroup = userGroup;
     }
 
+    public long getUser_id() {
+        return user_id;
+    }
     public String getUsername() {
         return username;
     }
@@ -55,10 +58,6 @@ public class User{
 
     public String getLastname() {
         return lastname;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public UserGroup getUserGroup() {

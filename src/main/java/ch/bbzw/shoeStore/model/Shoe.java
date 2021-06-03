@@ -30,11 +30,12 @@ public class Shoe {
     protected Shoe() {
     }
 
-    public Shoe(final String name, final String size, final Date realse_date, final Integer inventory) {
+    public Shoe(final String name, final String size, final Date realse_date, final Integer inventory, final Price price) {
         this.name = name;
         this.size = size;
         this.realse_date = realse_date;
         this.inventory = inventory;
+        this.price = price;
     }
 
     public String getName() {
@@ -52,4 +53,6 @@ public class Shoe {
     public Integer getInventory() {
         return inventory;
     }
+
+    public Price getPrice() {return  price; }
 }

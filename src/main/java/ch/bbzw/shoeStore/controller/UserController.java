@@ -18,10 +18,10 @@ import java.util.stream.StreamSupport;
 @RequestMapping(path="/user")
 @PreAuthorize("hasAuthority('PURCHASER') or hasAuthority('ADMIN') or hasAuthority('SELLER')")
 public class UserController {
-    private final UserRepo userService;
+    private final UserService userService;
 
     @Autowired
-    public UserController(final UserRepo userService) {
+    public UserController(final UserService userService) {
         this.userService = userService;
     }
 
@@ -34,15 +34,18 @@ public class UserController {
     @GetMapping("/")
     @PreAuthorize("hasAuthority('ADMIN')")
     public List<User> getAll() {
-        final Iterable<User> users = userService.findAll();
-        return StreamSupport
-                .stream(users.spliterator(), false)
-                .collect(Collectors.toList());
+        return userService.getAll();
     }
 
     @PostMapping("/")
     @PreAuthorize("hasAuthority('ADMIN')")
     public User add(@RequestBody final User user) {
-        return userService.save(user);
+        return userService.add(user);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public void delete(@PathVariable final long id) {
+        userService.delete(id);
     }
 }
