@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -34,6 +35,20 @@ public class ShoeService {
     @Transactional
     public void delete(final long id) {
         shoeRepo.deleteById(id);
+    }
+
+    @Transactional
+    public Optional<Shoe> update(final long id, final Shoe shoe) {
+        final Optional<Shoe> optionalShoe = shoeRepo.findById(id);
+        if (optionalShoe.isPresent()) {
+            Shoe foundShoe = optionalShoe.get();
+            foundShoe.setName(shoe.getName());
+            foundShoe.setInventory(shoe.getInventory());
+            foundShoe.setPrice(shoe.getPrice());
+            foundShoe.setRealse_date(shoe.getRealse_date());
+            foundShoe.setSize(shoe.getSize());
+        }
+        return Optional.empty();
     }
 
     @Transactional(readOnly = true)

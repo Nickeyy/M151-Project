@@ -32,4 +32,16 @@ public class ShoeController {
     public Shoe add(@RequestBody final ShoeWithPrice shoeWithPrice) {
         return shoeService.add(shoeWithPrice);
     }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public void delete(@PathVariable final long id) {
+        shoeService.delete(id);
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public Shoe update(@PathVariable final long id, @RequestBody final Shoe shoe) {
+        return shoeService.update(id, shoe).orElse(null);
+    }
 }

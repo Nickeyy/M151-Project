@@ -38,6 +38,10 @@ public class Shoe {
         this.price = price;
     }
 
+    public long getShoe_id() {
+        return shoe_id;
+    }
+
     public String getName() {
         return name;
     }
@@ -55,4 +59,24 @@ public class Shoe {
     }
 
     public Price getPrice() {return  price; }
+
+    public void setPrice(Price price) {
+        this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public void setRealse_date(Date realse_date) {
+        this.realse_date = realse_date;
+    }
+
+    public void setInventory(Integer inventory) {
+        this.inventory = inventory;
+    }
 }
