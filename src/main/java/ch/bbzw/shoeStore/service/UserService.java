@@ -3,10 +3,13 @@ package ch.bbzw.shoeStore.service;
 import ch.bbzw.shoeStore.model.User;
 import ch.bbzw.shoeStore.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -35,5 +38,12 @@ public class UserService {
         return StreamSupport
                 .stream(users.spliterator(), false)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public Optional<User> getCurrentUser() {
+        final SecurityContext context = SecurityContextHolder.getContext();
+        final Optional<User> optionalUser = userRepo.findByUsername(context.getAuthentication().getName());
+        return optionalUser;
     }
 }

@@ -17,10 +17,18 @@ public class Purchase {
     @ManyToOne()
     private User user;
 
-    protected Purchase() {
+    public Purchase(Shoe shoe, User user) {
+        this.user = user;
+        this.shoe = shoe;
     }
+
+    protected Purchase() {
+
+    }
+
 
     public long getPurchase_id() {
         return purchase_id;
     }
+
 }
