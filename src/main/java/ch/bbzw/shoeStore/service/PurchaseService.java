@@ -46,4 +46,5 @@ public class PurchaseService {
                 .stream(purchases.spliterator(), false)
                 .collect(Collectors.toList());
     }
+    
 }

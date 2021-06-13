@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "shoestore_user")
-@NamedQuery(name = "User.checkPassword", query = "SELECT u FROM User u WHERE u.username = :username and password = public.crypt(text(:password), text(password))")
+@NamedQuery(name = "User.checkPassword", query = "SELECT u FROM User u WHERE u.username = :username and password = public.crypt(text(:password), text(password)) and u.deleted = false")
 public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
@@ -31,18 +31,22 @@ public class User{
     private String password;
 
    @Column(nullable = false)
+   private boolean deleted;
+
+   @Column(nullable = false)
    @Enumerated(EnumType.STRING)
    private UserGroup userGroup;
 
     protected User() {
     }
 
-    public User(final String username, final String firstname, final String lastname, final String password, final UserGroup userGroup) {
+    public User(final String username, final String firstname, final String lastname, final String password, final UserGroup userGroup, final boolean deleted) {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.userGroup = userGroup;
+        this.deleted = deleted;
     }
 
     public long getUser_id() {
@@ -62,5 +66,13 @@ public class User{
 
     public UserGroup getUserGroup() {
         return userGroup;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

@@ -31,4 +31,11 @@ public class Purchase {
         return purchase_id;
     }
 
+    public Shoe getShoe() {
+        return shoe;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }
