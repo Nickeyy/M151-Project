@@ -22,11 +22,13 @@ public class PurchaseService {
     private final PurchaseRepo purchaseRepo;
     private final ShoeRepo shoeRepo;
     private final UserService userService;
+    private final ShoeService shoeService;
 
-    public PurchaseService(final PurchaseRepo purchaseRepo, final ShoeRepo shoeRepo, final UserService userService) {
+    public PurchaseService(final PurchaseRepo purchaseRepo, final ShoeRepo shoeRepo, final UserService userService, final ShoeService shoeService) {
         this.purchaseRepo = purchaseRepo;
         this.shoeRepo = shoeRepo;
         this.userService = userService;
+        this.shoeService = shoeService;
     }
 
     @Transactional
@@ -36,6 +38,8 @@ public class PurchaseService {
         final Optional<Shoe> optionalShoe = shoeRepo.findById(shoeId);
         if(optionalShoe.isPresent()) {
             Shoe shoe = optionalShoe.get();
+            shoe.setInventory(shoe.getInventory() - 1);
+            shoeService.update(shoeId, shoe);
             final Optional<User> optionalUser = userService.getCurrentUser();
             if(optionalUser.isPresent()) {
                 User user = optionalUser.get();
