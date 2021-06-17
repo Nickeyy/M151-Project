@@ -38,8 +38,12 @@ public class PurchaseService {
         final Optional<Shoe> optionalShoe = shoeRepo.findById(shoeId);
         if(optionalShoe.isPresent()) {
             Shoe shoe = optionalShoe.get();
-            shoe.setInventory(shoe.getInventory() - 1);
-            shoeService.update(shoeId, shoe);
+            if (shoe.getInventory() == 0) {
+                return null;
+            } else {
+                shoe.setInventory(shoe.getInventory() - 1);
+                shoeService.update(shoeId, shoe);
+            }
             final Optional<User> optionalUser = userService.getCurrentUser();
             if(optionalUser.isPresent()) {
                 User user = optionalUser.get();
