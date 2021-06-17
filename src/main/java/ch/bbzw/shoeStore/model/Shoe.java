@@ -1,10 +1,11 @@
 package ch.bbzw.shoeStore.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Shoe {
+public class Shoe implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shoe_sequence")

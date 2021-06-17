@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "shoestore_user")
 @NamedQuery(name = "User.checkPassword", query = "SELECT u FROM User u WHERE u.username = :username and password = public.crypt(text(:password), text(password)) and u.deleted = false")
-public class User{
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     @SequenceGenerator(allocationSize = 1, name = "user_sequence")

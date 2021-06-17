@@ -4,6 +4,10 @@ import ch.bbzw.shoeStore.model.Shoe;
 import ch.bbzw.shoeStore.model.User;
 import ch.bbzw.shoeStore.repo.PurchaseRepo;
 import ch.bbzw.shoeStore.repo.ShoeRepo;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +17,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Service
+@CacheConfig(cacheNames = {"purchase"})
 public class PurchaseService {
     private final PurchaseRepo purchaseRepo;
     private final ShoeRepo shoeRepo;
@@ -25,6 +30,8 @@ public class PurchaseService {
     }
 
     @Transactional
+    @CachePut(key = "#shoeId")
+    @CacheEvict(key = "0")
     public Purchase add(final long shoeId) {
         final Optional<Shoe> optionalShoe = shoeRepo.findById(shoeId);
         if(optionalShoe.isPresent()) {
@@ -40,11 +47,12 @@ public class PurchaseService {
     }
 
     @Transactional(readOnly = true)
+    @Cacheable(key = "0")
     public List<Purchase> getAll() {
         final Iterable<Purchase> purchases = purchaseRepo.findAll();
         return StreamSupport
                 .stream(purchases.spliterator(), false)
                 .collect(Collectors.toList());
     }
-    
+
 }

@@ -27,6 +27,11 @@ public class ShoeController {
         return shoeService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public Shoe get(@PathVariable final long id) {
+        return shoeService.get(id).orElse(null);
+    }
+
     @PostMapping("/")
     @PreAuthorize("hasAuthority('ADMIN')")
     public Shoe add(@RequestBody final ShoeWithPrice shoeWithPrice) {

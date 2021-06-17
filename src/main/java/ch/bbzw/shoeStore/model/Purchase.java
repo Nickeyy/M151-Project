@@ -1,9 +1,10 @@
 package ch.bbzw.shoeStore.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Purchase {
+public class Purchase implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "purchase_sequence")
