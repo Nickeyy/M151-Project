@@ -2,9 +2,7 @@ package ch.bbzw.shoeStore.controller;
 
 import ch.bbzw.shoeStore.dto.ShoeWithPrice;
 import ch.bbzw.shoeStore.model.Shoe;
-import ch.bbzw.shoeStore.model.User;
 import ch.bbzw.shoeStore.service.ShoeService;
-import ch.bbzw.shoeStore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

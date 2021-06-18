@@ -1,7 +1,6 @@
 package ch.bbzw.shoeStore.controller;
 
 import ch.bbzw.shoeStore.model.User;
-import ch.bbzw.shoeStore.repo.UserRepo;
 import ch.bbzw.shoeStore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -9,10 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping(path="/user")

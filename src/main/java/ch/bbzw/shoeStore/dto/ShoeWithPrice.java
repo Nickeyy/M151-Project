@@ -1,7 +1,6 @@
 package ch.bbzw.shoeStore.dto;
 
 import ch.bbzw.shoeStore.model.Price;
-import ch.bbzw.shoeStore.model.Shoe;
 
 import java.util.Date;
 

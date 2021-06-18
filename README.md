@@ -19,26 +19,12 @@ abgespeichert ist.
 4. Browser öffnen und auf ``localhost:5050`` wechseln.
 
 #### Endpunkte erreichen
-1. Postman starten
+1. Postman benutzen (Für dass das Postman export File im Ordner `postman` verwenden)
+2. Es ist bereits beim Start ein Benutzer erstellt. (Username: `NickD` Passwort: `test`)
 
 ### Postman Beispiele
 Die Beispiele laufen alle über den Port ````8080````, welcher aber noch angepasst werden kann.
 Einige Calls sind nur als Admin verfügbar.
-
-
-```GET``` call für alle Schuhe: ```http://localhost:8080/shoe/``` <br>
-``DELETE`` call für Schuh löschen: ```http://localhost:8080/shoe/1``` (nur als Admin möglich) <br>
-```POST``` call für neuen Schuh erstellen: ```http://localhost:8080/shoe/``` (nur als Admin möglich) <br><br>
-
-Konstrukt für neuen Schuh:
-
-    {
-       "price": {
-           "price": 768.68
-       },
-       "name": "Jordan 1 Union",
-       "size": "45",
-       "realse_date": "2021-06-07",
-       "inventory": 23
-    }
-    
+<br><br>
+Alle Beispiele sind im Postman File im `Postman` Ordner. Einfach in Postman importieren und man ist bereit
+das Program zu benutzen.
